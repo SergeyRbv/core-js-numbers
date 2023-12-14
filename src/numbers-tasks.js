@@ -107,12 +107,12 @@ function getLinearEquationRoot(a, b) {
  *   (0,-1) (1,0)    => π/2
  *   (0,1) (0,1)     => 0
  */
-function getAngleBetweenVectors(x1, y1, x2, y2) {
+const getAngleBetweenVectors = (x1, y1, x2, y2) => {
   const dotProduct = x1 * x2 + y1 * y2;
   const magnitude1 = Math.sqrt(x1 * x1 + y1 * y1);
   const magnitude2 = Math.sqrt(x2 * x2 + y2 * y2);
   return Math.acos(dotProduct / (magnitude1 * magnitude2));
-}
+};
 
 /**
  * Returns a last digit of a integer number.
@@ -459,8 +459,8 @@ function isInteger(number) {
  * '4.567abcdefgh' => 4.567
  * 'abcdefgh'      => NaN
  */
-function getFloatOnString(/* str */) {
-  throw new Error('Not implemented');
+function getFloatOnString(str) {
+  return Number.parseFloat(str);
 }
 
 /**
@@ -477,8 +477,8 @@ function getFloatOnString(/* str */) {
  * '1.234', 2           => 1
  * '10', 8              => 8
  */
-function getIntegerOnString(/* str, base */) {
-  throw new Error('Not implemented');
+function getIntegerOnString(str, base) {
+  return Number.parseInt(str, base);
 }
 
 /**
